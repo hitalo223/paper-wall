@@ -1,0 +1,15 @@
+# Segredos e configurações locais
+.env
+.env.*
+!.env.example
+.vercel
+
+# Dependências e builds
+node_modules/
+dist/
+.next/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini

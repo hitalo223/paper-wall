@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paper Wall · Wallpapers curados para o seu setup</title>
+  <meta name="description" content="O Paper Wall é uma biblioteca de wallpapers estáticos e animados para computador, com busca por cores e suporte a vários monitores.">
+  <meta name="theme-color" content="#07090F">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2307090F'/%3E%3Cpath d='M7 11a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z' fill='%232F7BF6'/%3E%3Cpath d='M9 9h5l2 2' stroke='%23F66F14' stroke-width='1.5' fill='none'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=8">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <a class="skip" href="#main" data-i18n="skip">Pular para o conteúdo</a>
+
+  <header class="nav" data-load style="--d:0ms">
+    <a class="brand" href="#top" aria-label="Paper Wall">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Paper<em>Wall</em></span>
+    </a>
+    <nav class="nav-links" data-i18n-attr="aria-label:nav.label">
+      <a href="#como-funciona" data-i18n="nav.how">Como funciona</a>
+      <a href="#recursos" data-i18n="nav.features">Recursos</a>
+      <a href="#precos" data-i18n="nav.pricing">Preços</a>
+      <a href="#faq" data-i18n="nav.faq">Dúvidas</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang" role="group" data-i18n-attr="aria-label:lang.label">
+        <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-primary btn-sm" href="#" data-app data-i18n="cta.start">Começar grátis</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="pill" data-load style="--d:120ms"><span class="pill-dot" aria-hidden="true"></span><span data-i18n="hero.pill">Wallpapers estáticos e animados</span></p>
+        <h1 class="hero-title" data-split style="--base:260ms" data-i18n-html="hero.title">Sua tela é a parede <em>mais vista</em> da casa.</h1>
+        <p class="hero-sub" data-load style="--d:750ms" data-i18n="hero.sub"></p>
+        <div class="hero-actions" data-load style="--d:900ms">
+          <a class="btn btn-primary" href="#" data-app data-i18n="cta.start">Começar grátis</a>
+          <a class="btn btn-ghost" href="#como-funciona" data-i18n="cta.how">Ver como funciona</a>
+        </div>
+      </div>
+      <div class="hero-stage" data-load="stage" style="--d:450ms">
+        <div class="stage-glow" aria-hidden="true"></div>
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg" aria-hidden="true">
+          <source src="assets/video/hero.webm" type="video/webm">
+          <source src="assets/video/hero.mp4" type="video/mp4">
+        </video>
+        <p class="stage-meta mono" aria-hidden="true"><span>hero.mp4</span><span>1920×1080</span><span data-i18n="stage.loop">loop de 8 s</span></p>
+      </div>
+    </section>
+
+    <!-- ESTÉTICAS -->
+    <section class="aesthetics" aria-labelledby="aest-label">
+      <p class="eyebrow" id="aest-label" data-i18n="aest.label">Organizado por estética</p>
+      <div class="marquee"><div class="marquee-track"></div></div>
+    </section>
+
+    <!-- O QUE É -->
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <p class="eyebrow" data-i18n="about.eyebrow">O que é o Paper Wall</p>
+            <h2 class="h2" data-split data-i18n-html="about.title"></h2>
+          </div>
+          <div class="about-text" data-reveal>
+            <p data-i18n="about.p1"></p>
+            <p data-i18n="about.p2"></p>
+            <p class="label" data-i18n="about.for"></p>
+            <ul class="audience">
+              <li data-i18n="about.a1"></li>
+              <li data-i18n="about.a2"></li>
+              <li data-i18n="about.a3"></li>
+              <li data-i18n="about.a4"></li>
+              <li data-i18n="about.a5"></li>
+            </ul>
+          </div>
+        </div>
+        <ul class="facts">
+          <li data-reveal><h3 data-i18n="about.f1.t"></h3><p data-i18n="about.f1.d"></p></li>
+          <li data-reveal style="--d:100ms"><h3 data-i18n="about.f2.t"></h3><p data-i18n="about.f2.d"></p></li>
+          <li data-reveal style="--d:200ms"><h3 data-i18n="about.f3.t"></h3><p data-i18n="about.f3.d"></p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- A PAREDE (assinatura) -->
+    <section class="wall" id="parede" aria-labelledby="wall-title">
+      <div class="wall-sticky">
+        <div class="wall-head">
+          <p class="eyebrow" data-i18n="wall.eyebrow">A biblioteca</p>
+          <h2 class="h2" id="wall-title" data-split data-i18n-html="wall.title"></h2>
+        </div>
+        <div class="wall-stage" aria-hidden="true">
+          <div class="wall-core"></div>
+          <div class="wall-grid"></div>
+        </div>
+        <p class="wall-caption mono" data-i18n="wall.caption"></p>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <p class="eyebrow" data-i18n="how.eyebrow">Como funciona</p>
+        <h2 class="h2" data-split data-i18n-html="how.title"></h2>
+        <ol class="steps">
+          <li class="step" data-reveal>
+            <div class="step-demo demo-pick" aria-hidden="true">
+              <div class="dp-chips"><span data-i18n="aest.minimal"></span><span data-i18n="aest.cyberpunk"></span><span data-i18n="aest.anime"></span></div>
+              <div class="dp-grid"><i style="--j:0"></i><i style="--j:1"></i><i style="--j:2"></i></div>
+              <svg class="demo-cursor" viewBox="0 0 16 16"><path d="M2 1.5l11 6-4.8 1.4L6.3 14z" fill="#F2EEE6" stroke="#07090F" stroke-width="1" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="step-num mono"><span data-i18n="how.step">Passo</span> 1</p>
+            <h3 data-i18n="how.1.t"></h3>
+            <p data-i18n="how.1.d"></p>
+          </li>
+          <li class="step" data-reveal style="--d:120ms">
+            <div class="step-demo demo-desk" aria-hidden="true">
+              <div class="dd-wall"></div><div class="dd-wall"></div>
+              <div class="dd-icons"><i></i><i></i><i></i></div>
+              <span class="dd-name mono"></span>
+              <div class="dd-bar"><i></i><i></i><i></i><i></i></div>
+            </div>
+            <p class="step-num mono"><span data-i18n="how.step">Passo</span> 2</p>
+            <h3 data-i18n="how.2.t"></h3>
+            <p data-i18n="how.2.d"></p>
+          </li>
+          <li class="step" data-reveal style="--d:240ms">
+            <div class="step-demo demo-get" data-phase="0" aria-hidden="true">
+              <div class="dg-wall"></div>
+              <div class="dg-card">
+                <i class="dg-thumb"></i>
+                <div class="dg-info">
+                  <b class="mono">brasa-lenta.jpg</b>
+                  <span class="mono">3840×2160</span>
+                  <div class="dg-bar"><i></i></div>
+                  <span class="dg-status mono"></span>
+                </div>
+              </div>
+            </div>
+            <p class="step-num mono"><span data-i18n="how.step">Passo</span> 3</p>
+            <h3 data-i18n="how.3.t"></h3>
+            <p data-i18n="how.3.d"></p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ESTÁTICOS E ANIMADOS -->
+    <section class="section" id="recursos">
+      <div class="container feature-grid">
+        <div class="feature-copy">
+          <p class="eyebrow" data-i18n="live.eyebrow">Estáticos e animados</p>
+          <h2 class="h2" data-split data-i18n-html="live.title"></h2>
+          <p class="lead" data-reveal data-i18n="live.text"></p>
+          <ul class="how" data-reveal style="--d:80ms">
+            <li data-i18n="live.h1"></li>
+            <li data-i18n="live.h2"></li>
+            <li data-i18n="live.h3"></li>
+          </ul>
+          <div class="seg" role="group" data-reveal style="--d:140ms" data-i18n-attr="aria-label:live.label">
+            <button type="button" data-mode="static" aria-pressed="true" data-i18n="live.static">Estático</button>
+            <button type="button" data-mode="live" aria-pressed="false" data-i18n="live.live">Animado</button>
+          </div>
+          <p class="demo-note mono" data-reveal style="--d:200ms" data-i18n="demo.auto"></p>
+        </div>
+        <div class="desk" data-mode="static" data-reveal style="--d:150ms">
+          <div class="screen"><div class="screen-inner">
+            <img class="desk-layer" src="assets/video/hero-poster.jpg" alt="" loading="lazy">
+            <video class="desk-layer" muted loop playsinline preload="none" poster="assets/video/hero-poster.jpg" aria-hidden="true">
+              <source src="assets/video/hero.webm" type="video/webm">
+              <source src="assets/video/hero.mp4" type="video/mp4">
+            </video>
+            <span class="desk-tag mono" aria-hidden="true"><span class="desk-tag-static" data-i18n="live.tagStatic">IMAGEM</span><span class="desk-tag-live">LIVE</span></span>
+            <div class="desk-bar" aria-hidden="true"><i></i><i></i><i></i><i></i><span class="mono">19:08</span></div>
+          </div></div>
+          <span class="stand"></span><span class="base"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PALETAS -->
+    <section class="section" id="paletas">
+      <div class="container feature-grid">
+        <div class="feature-copy">
+          <p class="eyebrow" data-i18n="pal.eyebrow">Paletas de cores</p>
+          <h2 class="h2" data-split data-i18n-html="pal.title"></h2>
+          <p class="lead" data-reveal data-i18n="pal.text"></p>
+          <ul class="how" data-reveal style="--d:80ms">
+            <li data-i18n="pal.h1"></li>
+            <li data-i18n="pal.h2"></li>
+            <li data-i18n="pal.h3"></li>
+          </ul>
+          <div class="palettes" role="radiogroup" data-reveal style="--d:140ms" data-i18n-attr="aria-label:pal.label"></div>
+          <p class="demo-note mono" data-reveal style="--d:200ms" data-i18n="demo.auto"></p>
+        </div>
+        <div class="pal-board" data-reveal style="--d:150ms">
+          <div class="board-glow" aria-hidden="true"></div>
+          <div class="pal-grid"></div>
+          <div class="taskbar" aria-hidden="true">
+            <span class="tb-start"></span>
+            <span class="tb-icon"></span><span class="tb-icon"></span><span class="tb-icon"></span><span class="tb-icon"></span><span class="tb-icon"></span>
+            <span class="tb-clock">19:08</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MONITORES -->
+    <section class="section" id="monitores">
+      <div class="container">
+        <div class="mon-head">
+          <div class="feature-copy">
+            <p class="eyebrow" data-i18n="mon.eyebrow">Vários monitores</p>
+            <h2 class="h2" data-split data-i18n-html="mon.title"></h2>
+            <p class="lead" data-reveal data-i18n="mon.text"></p>
+            <ul class="how" data-reveal style="--d:80ms">
+              <li data-i18n="mon.h1"></li>
+              <li data-i18n="mon.h2"></li>
+              <li data-i18n="mon.h3"></li>
+            </ul>
+          </div>
+          <div class="mon-controls" data-reveal style="--d:120ms">
+            <div class="seg" role="group" data-i18n-attr="aria-label:mon.label">
+              <button type="button" data-n="1" aria-pressed="false" data-i18n="mon.one">1 tela</button>
+              <button type="button" data-n="2" aria-pressed="false" data-i18n="mon.two">2 telas</button>
+              <button type="button" data-n="3" aria-pressed="true" data-i18n="mon.three">3 telas</button>
+            </div>
+            <button type="button" class="switch" role="switch" aria-checked="true">
+              <span class="switch-track" aria-hidden="true"></span>
+              <span data-i18n="mon.protect">Proteger o ponto principal</span>
+            </button>
+            <p class="demo-note mono" data-i18n="demo.auto"></p>
+          </div>
+        </div>
+        <div class="monitors" data-reveal style="--d:150ms">
+          <div class="monitor"><div class="screen"><div class="screen-inner"></div></div><span class="stand"></span><span class="base"></span></div>
+          <div class="monitor"><div class="screen"><div class="screen-inner"></div></div><span class="stand"></span><span class="base"></span></div>
+          <div class="monitor"><div class="screen"><div class="screen-inner"></div></div><span class="stand"></span><span class="base"></span></div>
+        </div>
+        <p class="mon-res mono" aria-live="polite"><span data-res>5760×1080</span></p>
+      </div>
+    </section>
+
+    <!-- PREÇOS -->
+    <section class="section pricing" id="precos">
+      <div class="pricing-word" aria-hidden="true" data-i18n="price.word">Preços</div>
+      <div class="container">
+        <div class="price-head">
+          <h2 class="h2" data-split data-i18n-html="price.title"></h2>
+          <div class="seg period" role="group" data-reveal data-i18n-attr="aria-label:price.period">
+            <button type="button" data-period="monthly" aria-pressed="true" data-i18n="price.monthly">Mensal</button>
+            <button type="button" data-period="yearly" aria-pressed="false"><span data-i18n="price.yearly">Anual</span><span class="save">−33%</span></button>
+          </div>
+        </div>
+        <div class="plans">
+          <article class="plan" data-reveal>
+            <h3 class="plan-name" data-i18n="price.free.name">Grátis</h3>
+            <p class="plan-price"><span class="price-num" data-i18n="price.free.num">R$ 0</span></p>
+            <p class="plan-bill" data-i18n="price.free.bill"></p>
+            <p class="plan-desc" data-i18n="price.free.desc"></p>
+            <ul>
+              <li data-i18n="price.free.f1"></li>
+              <li data-i18n="price.free.f2"></li>
+              <li data-i18n="price.free.f3"></li>
+              <li data-i18n="price.free.f4"></li>
+            </ul>
+            <a class="btn btn-ghost" href="#" data-app data-i18n="cta.start">Começar grátis</a>
+          </article>
+          <article class="plan plan-pro" data-reveal style="--d:120ms">
+            <h3 class="plan-name">Pro</h3>
+            <p class="plan-price"><span class="price-num" data-price-num></span><span class="price-per" data-i18n="price.per">/mês</span></p>
+            <p class="plan-bill" data-price-bill></p>
+            <p class="plan-desc" data-i18n="price.pro.desc"></p>
+            <ul>
+              <li data-i18n="price.pro.f1"></li>
+              <li data-i18n="price.pro.f2"></li>
+              <li data-i18n="price.pro.f3"></li>
+              <li data-i18n="price.pro.f4"></li>
+              <li data-i18n="price.pro.f5"></li>
+            </ul>
+            <a class="btn btn-primary" href="#" data-app data-i18n="cta.pro">Assinar o Pro</a>
+          </article>
+        </div>
+        <p class="plans-note mono" data-i18n="price.note"></p>
+      </div>
+    </section>
+
+    <!-- DÚVIDAS -->
+    <section class="section" id="faq">
+      <div class="container faq-grid">
+        <div>
+          <p class="eyebrow" data-i18n="faq.eyebrow">Dúvidas</p>
+          <h2 class="h2" data-split data-i18n-html="faq.title"></h2>
+        </div>
+        <div class="faq-list" data-reveal>
+          <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.1.q"></span><span class="faq-icon" aria-hidden="true"></span></button></h3><div class="faq-a"><div><p data-i18n="faq.1.a"></p></div></div></div>
+          <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.2.q"></span><span class="faq-icon" aria-hidden="true"></span></button></h3><div class="faq-a"><div><p data-i18n="faq.2.a"></p></div></div></div>
+          <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.3.q"></span><span class="faq-icon" aria-hidden="true"></span></button></h3><div class="faq-a"><div><p data-i18n="faq.3.a"></p></div></div></div>
+          <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.4.q"></span><span class="faq-icon" aria-hidden="true"></span></button></h3><div class="faq-a"><div><p data-i18n="faq.4.a"></p></div></div></div>
+          <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.5.q"></span><span class="faq-icon" aria-hidden="true"></span></button></h3><div class="faq-a"><div><p data-i18n="faq.5.a"></p></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta" id="comecar">
+      <div class="container">
+        <h2 class="h2" data-split data-i18n-html="end.title"></h2>
+        <p data-reveal data-i18n="end.text"></p>
+        <div class="hero-actions" data-reveal style="--d:120ms">
+          <a class="btn btn-primary" href="#" data-app data-i18n="cta.start">Começar grátis</a>
+          <a class="btn btn-ghost" href="#precos" data-i18n="cta.pricing">Ver preços</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#top" aria-label="Paper Wall"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Paper<em>Wall</em></span></a>
+      <p data-i18n="footer.tag"></p>
+      <p class="mono">© 2026 Paper Wall</p>
+    </div>
+  </footer>
+
+  <template id="pano-tpl">
+    <div class="pano">
+      <div class="pano-sky"></div>
+      <div class="pano-sun"></div>
+      <svg class="pano-ridge" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 110 L70 86 L150 104 L240 58 L320 96 L400 70 L470 100 L560 46 L650 92 L730 72 L820 106 L900 78 L1000 96 L1000 200 L0 200Z" fill="#1A0F14"/>
+        <path d="M0 150 L120 124 L220 146 L330 116 L450 152 L560 122 L680 148 L790 126 L900 152 L1000 136 L1000 200 L0 200Z" fill="#07060B"/>
+      </svg>
+      <div class="safe"><span class="mono" data-i18n="mon.safe">área segura</span></div>
+    </div>
+  </template>
+
+  <script src="js/i18n.js?v=8"></script>
+  <script src="js/main.js?v=8"></script>
+</body>
+</html>
