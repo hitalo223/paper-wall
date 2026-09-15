@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=17">
+  <link rel="stylesheet" href="css/style.css?v=18">
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -42,6 +42,7 @@
     <!-- HERO -->
     <section class="hero" id="top">
       <div class="hero-copy">
+        <p class="now" data-now hidden><span class="now-dot" aria-hidden="true"></span><b>0</b> <span data-i18n="now.one"></span><span data-i18n="now.many"></span></p>
         <p class="pill" data-load style="--d:120ms"><span class="pill-dot" aria-hidden="true"></span><span data-i18n="hero.pill">Wallpapers estáticos e animados</span></p>
         <h1 class="hero-title" data-split style="--base:260ms" data-i18n-html="hero.title">Sua tela é a parede <em>mais vista</em> da casa.</h1>
         <p class="hero-sub" data-load style="--d:750ms" data-i18n="hero.sub"></p>
@@ -49,6 +50,8 @@
           <a class="btn btn-primary" href="#" data-buy data-i18n="cta.buy">Adquirir agora</a>
           <a class="btn btn-ghost" href="#como-funciona" data-i18n="cta.how">Ver como funciona</a>
         </div>
+        <div class="proof" data-proof hidden aria-hidden="true"></div>
+        <ul class="trust" data-trust data-load style="--d:1000ms"></ul>
       </div>
       <div class="hero-stage" data-load="stage" style="--d:1050ms">
         <div class="stage-glow" aria-hidden="true"></div>
@@ -97,7 +100,11 @@
             <li data-i18n="aest.academia"></li>
             <li data-i18n="aest.lofi"></li>
           </ul>
-          <div data-reveal style="--d:200ms"><a class="btn btn-primary" href="#" data-buy data-i18n="cta.buy">Adquirir agora</a></div>
+          <div data-reveal style="--d:200ms">
+            <a class="btn btn-primary" href="#" data-buy data-i18n="cta.buy">Adquirir agora</a>
+            <div class="proof" data-proof hidden aria-hidden="true"></div>
+            <ul class="trust" data-trust></ul>
+          </div>
         </div>
       </div>
     </section>
@@ -360,6 +367,10 @@
           <a class="btn btn-primary" href="#" data-buy data-i18n="cta.buy">Adquirir agora</a>
           <a class="btn btn-ghost" href="#precos" data-i18n="cta.pricing">Ver preços</a>
         </div>
+        <div data-reveal style="--d:200ms">
+          <div class="proof" data-proof hidden aria-hidden="true"></div>
+          <ul class="trust" data-trust></ul>
+        </div>
       </div>
     </section>
   </main>
@@ -371,6 +382,14 @@
       <p class="mono">© 2026 Paper Wall</p>
     </div>
   </footer>
+
+  <!-- Modo demonstração (?demo=1): prova social ilustrativa, não aparece para visitantes. -->
+  <div class="toast" role="status" aria-live="polite" hidden>
+    <span class="toast-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></span>
+    <p><span data-i18n="toast.text"></span><small data-i18n="toast.time"></small></p>
+    <button class="toast-close" type="button" data-i18n-attr="aria-label:toast.close">×</button>
+  </div>
+  <p class="demo-badge mono" hidden data-i18n="demo.badge"></p>
 
   <template id="pano-tpl">
     <div class="pano">
@@ -384,7 +403,7 @@
     </div>
   </template>
 
-  <script src="js/i18n.js?v=17"></script>
-  <script src="js/main.js?v=17"></script>
+  <script src="js/i18n.js?v=18"></script>
+  <script src="js/main.js?v=18"></script>
 </body>
 </html>

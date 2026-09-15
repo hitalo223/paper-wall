@@ -373,6 +373,76 @@
   $$('[data-app]').forEach(a => a.setAttribute('href', APP_URL));
   $$('[data-buy]').forEach(a => a.setAttribute('href', CHECKOUT_URL));
 
+  /* ---------- Ícones ---------- */
+  const ICON = {
+    shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>',
+    lock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>',
+    bolt: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>',
+    star: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg>',
+    person: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="9" r="4.2"/><path d="M3.5 23c1.4-5 4.6-7.5 8.5-7.5s7.1 2.5 8.5 7.5z"/></svg>'
+  };
+
+  /* ---------- Sinais de confiança (para todos) ---------- */
+  // Só coisas verdadeiras: garantia de 7 dias (direito do consumidor), pagamento pela plataforma, acesso após a compra.
+  const TRUST = [['shield', 'trust.1'], ['lock', 'trust.2'], ['bolt', 'trust.3']];
+  $$('[data-trust]').forEach(ul => {
+    ul.innerHTML = TRUST.map(([icon, key]) => `<li>${ICON[icon]}<span data-i18n="${key}"></span></li>`).join('');
+  });
+
+  /* ---------- Modo demonstração (?demo=1) ---------- */
+  // Prova social ilustrativa, só para visualizar o design. NÃO aparece para visitantes comuns.
+  // Quando houver dados reais (visitantes pelo Supabase, vendas pela Kiwify), trocar os números de exemplo por eles.
+  const DEMO = new URLSearchParams(location.search).get('demo') === '1';
+  if (DEMO) {
+    document.body.classList.add('is-demo');
+    $('.demo-badge').hidden = false;
+
+    // Avatares + 4 de 5 estrelas embaixo dos botões de compra.
+    const AVATAR_COLORS = ['#2DD46F', '#7CF0A6', '#15803D', '#A7B0AA'];
+    $$('[data-proof]').forEach(el => {
+      el.hidden = false;
+      el.innerHTML = `<span class="proof-avatars">${AVATAR_COLORS.map(c => `<i style="--c:${c}">${ICON.person}</i>`).join('')}</span>
+        <span><span class="proof-stars">${[1, 2, 3, 4, 5].map(n => `<span class="${n <= 4 ? 'on' : 'off'}">${ICON.star}</span>`).join('')}</span>
+        <span class="proof-text"><b data-i18n="proof.rating"></b> <span data-i18n="proof.label"></span></span></span>`;
+    });
+
+    // "X pessoas estão no site": oscila de 0 a 8, um passo por vez.
+    const now = $('[data-now]');
+    const nowNum = $('b', now);
+    let people = 3 + Math.floor(Math.random() * 3);
+    const renderNow = animate => {
+      nowNum.textContent = people;
+      $('[data-i18n="now.one"]', now).hidden = people !== 1;
+      $('[data-i18n="now.many"]', now).hidden = people === 1;
+      if (animate) {
+        nowNum.classList.remove('is-swap');
+        void nowNum.offsetWidth;
+        nowNum.classList.add('is-swap');
+      }
+    };
+    now.hidden = false;
+    renderNow(false);
+    const stepNow = () => {
+      const next = clamp(people + (Math.random() < .5 ? -1 : 1), 0, 8);
+      if (next !== people) { people = next; renderNow(true); }
+      setTimeout(stepNow, 4000 + Math.random() * 4000);
+    };
+    setTimeout(stepNow, 5000);
+
+    // Notificação verde a cada 5 a 6 minutos (a primeira em 8 s, para ver o design).
+    const toast = $('.toast');
+    toast.hidden = false;
+    let toastHide = null;
+    const showToast = () => {
+      toast.classList.add('is-on');
+      clearTimeout(toastHide);
+      toastHide = setTimeout(() => toast.classList.remove('is-on'), 6000);
+      setTimeout(showToast, (300 + Math.random() * 60) * 1000);
+    };
+    setTimeout(showToast, 8000);
+    $('.toast-close', toast).addEventListener('click', () => toast.classList.remove('is-on'));
+  }
+
   /* ---------- Imagem ilustrativa do pack ---------- */
   // Pastas por categoria com miniaturas de exemplo. Trocar por prints reais do pack.
   const PACK_FOLDERS = [

@@ -46,6 +46,9 @@ Log de decisões e aprendizados.
 - Nova seção **"O que você recebe"** (`#pack`): imagem ilustrativa com pastas por categoria e, ao lado, benefícios e categorias (Anime, Old Money, Cyberpunk, Minimalista, Dark Academia, Lo-fi). A imagem é provisória: trocar por prints reais do pack.
 - Entrega: recomendado usar a **área de membros da Kiwify** (acesso por e-mail, corta sozinho no reembolso) em vez de Drive. Área própria fica para depois.
 - Ainda com cara de assinatura: cards Grátis/Pro e FAQ de cancelamento. Ajustar quando houver preço e dados do pack.
+- **Sinais de confiança** (para todos) embaixo dos botões de compra: "Garantia de 7 dias", "Pagamento seguro", "Acesso logo após a compra". Manter só o que for verdade.
+- **Modo demonstração** (`?demo=1` no endereço): avatares com 4 de 5 estrelas, contador "X pessoas estão no site" (0 a 8) e notificação verde "Uma pessoa adquiriu o produto" a cada 5–6 min. Mostra a etiqueta "Modo demonstração · dados fictícios".
+- Decisão: contador e notificação **não aparecem para visitantes com números inventados** (publicidade enganosa, CDC art. 37), mesmo com o pedido de deixá-los públicos. Para ficarem públicos, ligar a dados reais: visitantes pelo Supabase Realtime e vendas pelo webhook da Kiwify. As avaliações só aparecem com notas reais de clientes.
 - **Pendências do app:** o site promete "tirar as cores de uma foto", "porcentagem de combinação", "download na resolução da tela" e "novos wallpapers toda semana" — o app precisa entregar isso (ou ajustar o texto).
 - Corrigido nos testes: palavras do título grudadas, vídeo alargando a página no celular, palavra "Preços" atrás do título, título em EN com palavra sozinha na última linha.
 - Referências salvas em `referencia-site/`: link em `referencias de site em links/` e colagem em `referencia de fontes em imagens/`.
