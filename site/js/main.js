@@ -556,22 +556,33 @@
   let reelVisible = false;
   let focusCard = null;        // quadro tocando o vídeo inteiro (mouse, toque ou teclado)
 
+  // Os quadros ficam na parte de dentro de um cilindro: o centro fica mais longe
+  // e as bordas vêm para a frente, viradas para o meio (curva côncava).
   function layoutReel(dt) {
     const half = reel.clientWidth / 2;
     const cw = cards[0].el.offsetWidth;
-    const gap = cw * 1.08;
+    const P = parseFloat(getComputedStyle(reel).perspective) || 900;
+    const gap = cw * 1.05;                        // distância entre quadros, medida na curva
+    const R = Math.max(half * .8, cw * 1.9);      // raio do cilindro: menor = mais curvo
     const total = gap * cards.length;
     if (!focusCard) reelOffset = (reelOffset + REEL_SPEED * dt) % total;
     cards.forEach((c, i) => {
-      let x = (((i * gap - reelOffset) % total) + total) % total;
-      if (x > total / 2) x -= total;
-      const t = clamp(x / (half + cw / 2), -1.2, 1.2);
-      const a = Math.abs(t);
+      let s = (((i * gap - reelOffset) % total) + total) % total;
+      if (s > total / 2) s -= total;
+      const th = s / R;                           // ângulo na curva, em radianos
       const on = c.el === focusCard;
       c.lift += ((on ? 1 : 0) - c.lift) * Math.min(1, dt * 10);
-      c.el.style.transform = `translateX(${x.toFixed(1)}px) translateZ(${(-a * a * 260 + c.lift * 70).toFixed(1)}px) rotateY(${(-t * 38 * (1 - c.lift)).toFixed(2)}deg) scale(${(1 + c.lift * .08).toFixed(3)})`;
-      c.el.style.opacity = on ? 1 : clamp(1.25 - a);
-      c.el.style.zIndex = on ? 50 : Math.round(20 - a * 10);
+      const x = R * Math.sin(th);
+      const zBase = R * (1 - Math.cos(th));
+      const z = zBase + c.lift * 90;
+      // Onde o quadro aparece na tela depois da perspectiva: 0 no centro, 1 na borda.
+      // Quadros atrás da curva ou colados na câmera ficam de fora.
+      const a = Math.abs(th) < 1.45 && zBase < P * .8 ? Math.abs(x * P / (P - zBase)) / half : 9;
+      const rot = -th * (180 / Math.PI) * (1 - c.lift);
+      c.el.style.transform = `translateX(${x.toFixed(1)}px) translateZ(${z.toFixed(1)}px) rotateY(${rot.toFixed(2)}deg) scale(${(1 + c.lift * .08).toFixed(3)})`;
+      c.el.style.opacity = on ? 1 : clamp((1.4 - a) * 2.5);
+      c.el.style.visibility = on || a < 1.4 ? '' : 'hidden';
+      c.el.style.zIndex = on ? 50 : Math.round(10 + a * 10);
       c.el.classList.toggle('is-center', !focusCard && a < .2);
       // Só rodam os quadros perto do centro (ou o escolhido); o resto fica parado.
       const shouldPlay = reelVisible && (on || (!focusCard && a < .45));

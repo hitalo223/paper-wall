@@ -179,10 +179,11 @@ h1 em, h2 em {
   filter: blur(40px);
 }
 .reel {
-  --cw: clamp(150px, 17vw, 240px);
+  --cw: clamp(120px, 13vw, 190px);
   position: relative; overflow: hidden;
-  height: calc(var(--cw) * 16 / 9 + 5rem);
-  perspective: 1300px;
+  /* Mais alto que o quadro: os das bordas chegam mais perto e crescem. */
+  height: calc(var(--cw) * 16 / 9 * 1.6 + 2rem);
+  perspective: 900px;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
 }
