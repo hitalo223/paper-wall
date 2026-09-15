@@ -26,6 +26,12 @@ Log de decisões e aprendizados.
 - Decisão: **não é lançamento.** Saíram lista de espera, "Em breve" e textos de pré-lançamento. O site apresenta a ferramenta como pronta, com descrição ("O que é") e exemplos animados de cada função.
 - Decisão: a **ferramenta funcional (app)** vai ser construída neste projeto. Os botões "Começar grátis"/"Assinar o Pro" apontam para `APP_URL` em `site/js/main.js` (hoje `#`), a trocar quando o app existir.
 - Funções mostradas no site (primeira versão do app): biblioteca por estética, estáticos e animados, paletas de cores, vários monitores. IA, kits de setup, dinâmicos e app para PC ficam fora até existirem.
+## 2026-09-15 — Infra
+- **GitHub:** repositório público `hitalo223/paper-wall` (branch `main`).
+- **Vercel:** projeto `paper-wall` ligado ao GitHub; cada push na `main` publica. Serve a pasta `site/` (`vercel.json`). URL: https://paper-wall.vercel.app
+- **Supabase:** projeto novo `paper-wall` (ref `mwculaoyknpyqnevvlvq`, região São Paulo, plano grátis, custo 0). Banco ainda vazio.
+- O projeto antigo `wallpaper-gallery-app` do Supabase foi **pausado** (não excluído) para liberar a vaga do plano grátis. Pode ser restaurado no painel. O app antigo na Vercel (`wallpaper-gallery-app`) usava esse banco e deixa de funcionar.
+- Decisão: começar o app do zero; o app antigo fica só como referência.
 - **Pendências do app:** o site promete "tirar as cores de uma foto", "porcentagem de combinação", "download na resolução da tela" e "novos wallpapers toda semana" — o app precisa entregar isso (ou ajustar o texto).
 - Corrigido nos testes: palavras do título grudadas, vídeo alargando a página no celular, palavra "Preços" atrás do título, título em EN com palavra sozinha na última linha.
 - Referências salvas em `referencia-site/`: link em `referencias de site em links/` e colagem em `referencia de fontes em imagens/`.
