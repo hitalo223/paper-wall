@@ -401,11 +401,16 @@ h1 em, h2 em {
 [hidden] { display: none !important; }
 
 /* ---------- Cards embaralhados no topo ---------- */
-.hero-cards { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(1.25rem, 4vw, 3rem); margin: 0 0 2rem; }
+/* Os cards ficam no eixo central do título; o "+500" fica ao lado sem deslocar os cards. */
+.hero-cards { position: relative; margin: 0 auto 2rem; }
 .hc-stack {
   --cw: clamp(78px, 8.5vw, 118px);
-  position: relative; width: calc(var(--cw) * 4.6); height: calc(var(--cw) * 1.75);
-  transform: perspective(900px) rotateX(10deg) rotateZ(-4deg);
+  position: relative; width: calc(var(--cw) * 4.7); height: calc(var(--cw) * 1.75); margin-inline: auto;
+  transform: perspective(900px) rotateX(8deg);
+}
+.hero-cards .hc-count { position: absolute; left: calc(100% + clamp(1.5rem, 3vw, 2.5rem)); top: 50%; transform: translateY(-50%); white-space: nowrap; }
+@media (max-width: 900px) {
+  .hero-cards .hc-count { position: static; transform: none; margin-top: .9rem; text-align: center; }
 }
 .hc-card {
   position: absolute; left: 50%; top: 50%; width: var(--cw);
@@ -439,7 +444,6 @@ h1 em, h2 em {
 .is-loaded .hc-card { opacity: 1; animation: hc-in 1s var(--ease) calc(850ms + var(--i) * 90ms) backwards; }
 @keyframes hc-in { from { opacity: 0; transform: translate(0, 30%) rotate(0deg) scale(.7); } }
 @media (max-width: 600px) {
-  .hero-cards { gap: .75rem; }
   .hc-stack { --cw: 52px; }
   .hc-info { justify-content: flex-end; }
   .hc-info b { display: none; }

@@ -463,11 +463,12 @@
   // Para usar imagens reais: salve em assets/cards e preencha "src" (ex.: 'assets/cards/anime.jpg').
   // Sem "src", o card usa uma arte de exemplo. x/y/r/s/z definem a posição embaralhada de cada card.
   const HERO_CARDS = [
-    { key: 'anime', src: '', art: 10, x: '-168%', y: '10%', r: '-14deg', s: .88, z: 1 },
-    { key: 'oldmoney', src: '', art: 11, x: '-86%', y: '-8%', r: '-6deg', s: .96, z: 3 },
-    { key: 'cyberpunk', src: '', art: 1, x: '0%', y: '2%', r: '3deg', s: 1.1, z: 5, top: true },
-    { key: 'minimal', src: '', art: 0, x: '88%', y: '12%', r: '10deg', s: .95, z: 4 },
-    { key: 'lofi', src: '', art: 8, x: '166%', y: '-6%', r: '16deg', s: .86, z: 2 }
+    // Leque simétrico em volta do centro: posições e inclinações espelhadas dos dois lados.
+    { key: 'anime', src: '', art: 10, x: '-172%', y: '9%', r: '-12deg', s: .88, z: 1 },
+    { key: 'oldmoney', src: '', art: 11, x: '-88%', y: '-3%', r: '-6deg', s: .96, z: 3 },
+    { key: 'cyberpunk', src: '', art: 1, x: '0%', y: '0%', r: '0deg', s: 1.1, z: 5, top: true },
+    { key: 'minimal', src: '', art: 0, x: '88%', y: '-3%', r: '6deg', s: .96, z: 3 },
+    { key: 'lofi', src: '', art: 8, x: '172%', y: '9%', r: '12deg', s: .88, z: 1 }
   ];
   const CHECK_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
   const hcStack = $('.hc-stack');
