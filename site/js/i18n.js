@@ -12,10 +12,12 @@ window.PW_I18N = {
     'nav.features': 'Recursos',
     'nav.pricing': 'Preços',
     'nav.faq': 'Dúvidas',
+    'nav.pack': 'O pack',
 
     'cta.start': 'Começar grátis',
     'cta.how': 'Ver como funciona',
     'cta.pricing': 'Ver preços',
+    'cta.buy': 'Adquirir agora',
     'cta.pro': 'Assinar o Pro',
 
     'hero.pill': 'Wallpapers estáticos e animados',
@@ -35,7 +37,24 @@ window.PW_I18N = {
     'aest.synthwave': 'Synthwave',
     'aest.y2k': 'Y2K',
     'aest.brutal': 'Brutalista',
+    'aest.oldmoney': 'Old Money',
     'aest.nature': 'Natureza',
+
+    'pack.eyebrow': 'O que você recebe',
+    'pack.title': 'Packs completos, <em>separados por categoria.</em>',
+    'pack.text': 'Mais de 500 wallpapers premium exclusivos, organizados em pastas por estilo. Você abre a categoria que combina com o seu setup e escolhe.',
+    'pack.caption': 'Imagem ilustrativa',
+    'pack.window': 'Paper Wall · Pack completo',
+    'pack.files': 'Estáticos e animados',
+    'pack.b1.t': 'Separados por categoria',
+    'pack.b1.d': 'Cada estilo tem a sua pasta: Anime, Old Money, Cyberpunk, Minimalista e mais.',
+    'pack.b2.t': 'Mais de 500 wallpapers',
+    'pack.b2.d': 'Premium e exclusivos, feitos para telas de computador.',
+    'pack.b3.t': 'Estáticos e animados',
+    'pack.b3.d': 'Imagens e vídeos em loop no mesmo pack.',
+    'pack.b4.t': 'Pronto para usar',
+    'pack.b4.d': 'Baixe, escolha e aplique como plano de fundo.',
+    'pack.cats': 'Categorias',
 
     'about.eyebrow': 'O que é o Paper Wall',
     'about.title': 'Uma biblioteca de wallpapers <em>feita para o seu setup.</em>',
@@ -149,7 +168,7 @@ window.PW_I18N = {
     'faq.5.a': 'Baixe a imagem. No Windows, clique com o botão direito no arquivo e escolha “Definir como plano de fundo da área de trabalho”. No macOS, abra Ajustes do Sistema, depois Papel de Parede, e escolha a imagem.',
 
     'end.title': 'Sua próxima parede <em>já está na pasta.</em>',
-    'end.text': 'Crie sua conta grátis e comece a montar o seu setup.',
+    'end.text': 'Garanta o pack e comece a montar o seu setup hoje.',
     'footer.tag': 'Feito para quem olha para a tela o dia inteiro.'
   },
 
@@ -164,10 +183,12 @@ window.PW_I18N = {
     'nav.features': 'Features',
     'nav.pricing': 'Pricing',
     'nav.faq': 'FAQ',
+    'nav.pack': 'The pack',
 
     'cta.start': 'Start free',
     'cta.how': 'See how it works',
     'cta.pricing': 'See pricing',
+    'cta.buy': 'Get it now',
     'cta.pro': 'Get Pro',
 
     'hero.pill': 'Static and live wallpapers',
@@ -187,7 +208,24 @@ window.PW_I18N = {
     'aest.synthwave': 'Synthwave',
     'aest.y2k': 'Y2K',
     'aest.brutal': 'Brutalist',
+    'aest.oldmoney': 'Old Money',
     'aest.nature': 'Nature',
+
+    'pack.eyebrow': 'What you get',
+    'pack.title': 'Complete packs, <em>sorted by category.</em>',
+    'pack.text': 'Over 500 exclusive premium wallpapers, organized in folders by style. Open the category that fits your setup and pick.',
+    'pack.caption': 'Illustrative image',
+    'pack.window': 'Paper Wall · Full pack',
+    'pack.files': 'Static and live',
+    'pack.b1.t': 'Sorted by category',
+    'pack.b1.d': 'Every style has its own folder: Anime, Old Money, Cyberpunk, Minimal and more.',
+    'pack.b2.t': '500+ wallpapers',
+    'pack.b2.d': 'Premium and exclusive, made for computer screens.',
+    'pack.b3.t': 'Static and live',
+    'pack.b3.d': 'Images and looping videos in the same pack.',
+    'pack.b4.t': 'Ready to use',
+    'pack.b4.d': 'Download, pick and set it as your background.',
+    'pack.cats': 'Categories',
 
     'about.eyebrow': 'What Paper Wall is',
     'about.title': 'A wallpaper library <em>made for your setup.</em>',
@@ -301,7 +339,7 @@ window.PW_I18N = {
     'faq.5.a': 'Download the image. On Windows, right-click the file and choose “Set as desktop background”. On macOS, open System Settings, then Wallpaper, and pick the image.',
 
     'end.title': 'Your next wall <em>is already in the folder.</em>',
-    'end.text': 'Create your free account and start building your setup.',
+    'end.text': 'Get the pack and start building your setup today.',
     'footer.tag': 'Made for people who look at a screen all day.'
   }
 };

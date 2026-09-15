@@ -41,6 +41,11 @@ Log de decisões e aprendizados.
 - Carrossel com 5 vídeos (`setup-01` a `setup-05`), todos gerados na mesma mesa com wallpapers diferentes. Os vídeos têm 10 s, 720px e 30 fps.
 - `setup-06` e `setup-07` são 2 vídeos baixados do TikTok (`ssstik.io`, um do @exo..tech), com setups e wallpapers de outros criadores. **Adicionados a pedido**, depois do alerta sobre direitos autorais e sobre dar a entender que aqueles wallpapers são do pack. Se houver reclamação, remover da lista `HERO_CLIPS` e apagar os arquivos.
 - **Atenção a marcas nos wallpapers dos vídeos:** logo da Ralph Lauren (`setup-01`) e relógio de luxo (`setup-02`). Evitar marcas registradas num pack vendido como exclusivo.
+- Paleta trocada para **preto + verde** (referência: template "Index", AI SaaS). Detalhes em `specs/design.md`.
+- Botão **"Adquirir agora"** no menu, no topo, na seção do pack e no final. Aponta para `CHECKOUT_URL` em `main.js` (hoje `#`, trocar pelo link da Kiwify).
+- Nova seção **"O que você recebe"** (`#pack`): imagem ilustrativa com pastas por categoria e, ao lado, benefícios e categorias (Anime, Old Money, Cyberpunk, Minimalista, Dark Academia, Lo-fi). A imagem é provisória: trocar por prints reais do pack.
+- Entrega: recomendado usar a **área de membros da Kiwify** (acesso por e-mail, corta sozinho no reembolso) em vez de Drive. Área própria fica para depois.
+- Ainda com cara de assinatura: cards Grátis/Pro e FAQ de cancelamento. Ajustar quando houver preço e dados do pack.
 - **Pendências do app:** o site promete "tirar as cores de uma foto", "porcentagem de combinação", "download na resolução da tela" e "novos wallpapers toda semana" — o app precisa entregar isso (ou ajustar o texto).
 - Corrigido nos testes: palavras do título grudadas, vídeo alargando a página no celular, palavra "Preços" atrás do título, título em EN com palavra sozinha na última linha.
 - Referências salvas em `referencia-site/`: link em `referencias de site em links/` e colagem em `referencia de fontes em imagens/`.

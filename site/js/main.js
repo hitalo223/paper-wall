@@ -6,6 +6,8 @@
   const dict = window.PW_I18N;
   // Endereço do site funcional (o app). Trocar quando ele existir.
   const APP_URL = '#';
+  // Link do checkout da Kiwify para os botões "Adquirir agora". Trocar quando existir.
+  const CHECKOUT_URL = '#';
 
   // Gerador pseudoaleatório com semente: a arte dos tiles é sempre igual.
   const seeded = seed => () => {
@@ -20,7 +22,7 @@
   };
 
   /* ---------- Dados ---------- */
-  const AESTHETICS = ['minimal', 'cyberpunk', 'quiet', 'anime', 'academia', 'lofi', 'synthwave', 'y2k', 'brutal', 'nature'];
+  const AESTHETICS = ['minimal', 'cyberpunk', 'quiet', 'anime', 'oldmoney', 'academia', 'lofi', 'synthwave', 'y2k', 'brutal', 'nature'];
 
   // [destaque, claro, meio, fundo]
   const PALETTES = {
@@ -369,6 +371,23 @@
 
   /* ---------- Botões para o app ---------- */
   $$('[data-app]').forEach(a => a.setAttribute('href', APP_URL));
+  $$('[data-buy]').forEach(a => a.setAttribute('href', CHECKOUT_URL));
+
+  /* ---------- Imagem ilustrativa do pack ---------- */
+  // Pastas por categoria com miniaturas de exemplo. Trocar por prints reais do pack.
+  const PACK_FOLDERS = [
+    ['anime', [10, 17, 5]], ['oldmoney', [11, 3, 6]], ['cyberpunk', [1, 13, 15]],
+    ['minimal', [0, 14, 6]], ['academia', [3, 11, 12]], ['lofi', [8, 16, 2]]
+  ];
+  const packFolders = $('.pack-folders');
+  PACK_FOLDERS.forEach(([key, ids]) => {
+    const folder = document.createElement('div');
+    folder.className = 'folder';
+    const thumbs = ids.map(i => `<i style="background:${ART[LIBRARY[i].s](PALETTES[LIBRARY[i].p], seeded(i * 97 + 13))}"></i>`).join('');
+    folder.innerHTML = `<div class="folder-thumbs">${thumbs}</div>
+      <div class="folder-info"><b data-i18n="aest.${key}"></b><span class="mono" data-i18n="pack.files"></span></div>`;
+    packFolders.appendChild(folder);
+  });
 
   /* ---------- Exemplos automáticos ---------- */
   // Roda só enquanto o exemplo está na tela. Para de vez quando a pessoa usa o controle.

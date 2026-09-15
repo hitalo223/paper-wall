@@ -13,6 +13,22 @@ Fonte da verdade de design. Toda cor, fonte e animação do site sai daqui.
 ## Cores
 | Nome | Hex | Uso |
 |---|---|---|
+> **Mudou em 2026-09-15:** a paleta laranja/azul virou **preto + verde**, seguindo a referência (template "Index", AI SaaS). O topo tem brilho verde e grade suave.
+
+| Nome | Hex | Uso |
+|---|---|---|
+| Noite | `#080A09` | Fundo (preto com leve tom verde) |
+| Grafite | `#111412` | Cards, superfícies |
+| Papel | `#F2F5F3` | Texto principal |
+| Névoa | `#8B938E` | Texto secundário |
+| Verde | `#2DD46F` | Destaque, botões, brilho |
+| Verde claro | `#7CF0A6` | Itálicos, detalhes, foco |
+| Verde escuro | `#15803D` | Marca e palavra gigante de preços |
+
+Paleta anterior (descartada):
+
+| Nome | Hex | Uso |
+|---|---|---|
 | Noite | `#07090F` | Fundo |
 | Grafite | `#10131B` | Cards, superfícies |
 | Papel | `#F2EEE6` | Texto principal (branco quente, "papel") |
@@ -22,7 +38,8 @@ Fonte da verdade de design. Toda cor, fonte e animação do site sai daqui.
 | Pasta | `#2F7BF6` | Azul da pasta. Só na marca e na palavra gigante de preços |
 
 - Linhas/bordas: `rgba(242,238,230,.08)`.
-- Texto em botão laranja é escuro (`#150903`), porque branco em laranja não tem contraste suficiente.
+- Texto em botão verde é escuro (`#03140A`), porque branco em verde claro não tem contraste suficiente.
+- Os wallpapers de exemplo (tiles, sol dos monitores) mantêm as cores próprias: são arte, não interface.
 - Textura granulada fixa por cima de tudo (opacidade ~6%).
 
 ## Tipografia
