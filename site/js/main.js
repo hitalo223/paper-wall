@@ -460,15 +460,15 @@
   });
 
   /* ---------- Cards embaralhados no topo ---------- */
-  // Para usar imagens reais: salve em assets/cards e preencha "src" (ex.: 'assets/cards/anime.jpg').
-  // Sem "src", o card usa uma arte de exemplo. x/y/r/s/z definem a posição embaralhada de cada card.
+  // Imagens (.jpg) e vídeos (.mp4, com .webm e capa .jpg de mesmo nome) ficam em assets/cards, recortados em 3:4.
+  // Sem "src", o card usa uma arte de exemplo. x/y/r/s/z definem a posição de cada card.
   const HERO_CARDS = [
     // Leque simétrico em volta do centro: posições e inclinações espelhadas dos dois lados.
-    { key: 'anime', src: '', art: 10, x: '-172%', y: '9%', r: '-12deg', s: .88, z: 1 },
-    { key: 'oldmoney', src: '', art: 11, x: '-88%', y: '-3%', r: '-6deg', s: .96, z: 3 },
-    { key: 'cyberpunk', src: '', art: 1, x: '0%', y: '0%', r: '0deg', s: 1.1, z: 5, top: true },
-    { key: 'minimal', src: '', art: 0, x: '88%', y: '-3%', r: '6deg', s: .96, z: 3 },
-    { key: 'lofi', src: '', art: 8, x: '172%', y: '9%', r: '12deg', s: .88, z: 1 }
+    { key: 'anime', src: 'assets/cards/anime.mp4', art: 10, x: '-172%', y: '9%', r: '-12deg', s: .88, z: 1 },
+    { key: 'oldmoney', src: 'assets/cards/oldmoney.jpg', art: 11, x: '-88%', y: '-3%', r: '-6deg', s: .96, z: 3 },
+    { key: 'cyberpunk', src: 'assets/cards/cyberpunk.jpg', art: 1, x: '0%', y: '0%', r: '0deg', s: 1.1, z: 5, top: true },
+    { key: 'minimal', src: 'assets/cards/minimal.jpg', art: 0, x: '88%', y: '-3%', r: '6deg', s: .96, z: 3 },
+    { key: 'lofi', src: 'assets/cards/lofi.jpg', art: 8, x: '172%', y: '9%', r: '12deg', s: .88, z: 1 }
   ];
   const CHECK_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
   const hcStack = $('.hc-stack');
@@ -477,11 +477,17 @@
     card.className = 'hc-card' + (c.top ? ' is-top' : '');
     card.style.cssText = `--i:${i};--x:${c.x};--y:${c.y};--r:${c.r};--s:${c.s};z-index:${c.z}`;
     const w = LIBRARY[c.art];
-    const image = c.src
-      ? `<div class="hc-img"><img src="${c.src}" alt=""></div>`
-      : `<div class="hc-img" style="background:${ART[w.s](PALETTES[w.p], seeded(c.art * 97 + 13))}"></div>`;
+    const base = c.src.replace(/\.(mp4|jpg)$/, '');
+    const image = !c.src
+      ? `<div class="hc-img" style="background:${ART[w.s](PALETTES[w.p], seeded(c.art * 97 + 13))}"></div>`
+      : c.src.endsWith('.mp4')
+        ? `<div class="hc-img"><video muted loop playsinline autoplay preload="auto" poster="${base}.jpg">
+            <source src="${base}.webm" type="video/webm"><source src="${c.src}" type="video/mp4"></video></div>`
+        : `<div class="hc-img"><img src="${c.src}" alt="" decoding="async"></div>`;
     card.innerHTML = `${image}<div class="hc-info"><b data-i18n="aest.${c.key}"></b><span class="hc-check" aria-hidden="true">${CHECK_ICON}</span></div>`;
     hcStack.appendChild(card);
+    const cardVideo = $('video', card);
+    if (cardVideo) { cardVideo.muted = true; cardVideo.play().catch(() => {}); }
   });
 
   /* ---------- Exemplos automáticos ---------- */

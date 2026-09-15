@@ -428,7 +428,7 @@ h1 em, h2 em {
 }
 .hc-card.is-top { border-color: rgba(45, 212, 111, .6); box-shadow: 0 0 0 1px rgba(45, 212, 111, .25), 0 0 40px -6px rgba(45, 212, 111, .55), 0 22px 44px -18px #000; }
 .hc-img { overflow: hidden; aspect-ratio: 3 / 4; border-radius: 10px; background-color: var(--grafite-2); }
-.hc-img img { width: 100%; height: 100%; object-fit: cover; }
+.hc-img img, .hc-img video { width: 100%; height: 100%; object-fit: cover; }
 .hc-info { display: flex; align-items: center; justify-content: space-between; gap: .3rem; padding: .35rem .2rem .1rem; }
 .hc-info b { overflow: hidden; font-size: clamp(.55rem, .8vw, .72rem); font-weight: 700; text-align: left; text-overflow: ellipsis; white-space: nowrap; }
 .hc-check { display: grid; place-items: center; flex: none; width: 13px; height: 13px; border-radius: 50%; background: var(--verde); color: #03140A; }
