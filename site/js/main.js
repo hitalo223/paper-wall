@@ -528,6 +528,25 @@
   const playVideo = () => video.play().catch(() => {});
   playVideo();
   video.addEventListener('loadeddata', playVideo, { once: true });
+
+  // Vídeos da mini tela do topo. Para adicionar outro: salve setup-02.mp4, setup-02.webm
+  // e setup-02-poster.jpg em assets/video e coloque 'setup-02' nesta lista.
+  const HERO_CLIPS = ['setup-01'];
+  if (HERO_CLIPS.length > 1) {
+    let clip = 0;
+    video.loop = false;
+    video.addEventListener('ended', () => {
+      clip = (clip + 1) % HERO_CLIPS.length;
+      const name = HERO_CLIPS[clip];
+      const [webm, mp4] = video.querySelectorAll('source');
+      video.poster = `assets/video/${name}-poster.jpg`;
+      webm.src = `assets/video/${name}.webm`;
+      mp4.src = `assets/video/${name}.mp4`;
+      $('[data-clip-name]').textContent = `${name}.mp4`;
+      video.load();
+      playVideo();
+    });
+  }
   // Se o navegador bloquear, começa no primeiro toque/rolagem.
   ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(ev =>
     addEventListener(ev, () => { if (video.paused) playVideo(); }, { once: true, passive: true }));

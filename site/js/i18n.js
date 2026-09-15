@@ -20,8 +20,8 @@ window.PW_I18N = {
 
     'hero.pill': 'Wallpapers estáticos e animados',
     'hero.title': 'Sua tela é a parede <em>mais vista</em> da casa.',
-    'hero.sub': 'Wallpapers estáticos e animados, escolhidos a dedo para quem monta o setup com cuidado. Combine com as cores da sua mesa e estenda por até três monitores sem cortar nada.',
-    'stage.loop': 'loop de 8 s',
+    'hero.sub': 'Um pack com mais de 500 wallpapers premium exclusivos, estáticos e animados, para quem monta o setup com cuidado. Combine com as cores da sua mesa e estenda por até três monitores sem cortar nada.',
+    'stage.label': 'Wallpaper do pack em um setup',
 
     'aest.label': 'Organizado por estética',
     'aest.minimal': 'Minimalista',
@@ -170,8 +170,8 @@ window.PW_I18N = {
 
     'hero.pill': 'Static and live wallpapers',
     'hero.title': 'Your screen is the <em>most-viewed</em> wall you own.',
-    'hero.sub': 'Hand-picked static and live wallpapers for people who build their setup with care. Match them to your desk colors and stretch them across up to three monitors without cutting anything off.',
-    'stage.loop': '8 s loop',
+    'hero.sub': 'A pack of 500+ exclusive premium wallpapers, static and live, for people who build their setup with care. Match them to your desk colors and stretch them across up to three monitors without cutting anything off.',
+    'stage.label': 'A wallpaper from the pack on a setup',
 
     'aest.label': 'Sorted by aesthetic',
     'aest.minimal': 'Minimal',

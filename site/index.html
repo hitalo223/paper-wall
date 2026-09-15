@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="stylesheet" href="css/style.css?v=9">
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -49,13 +49,22 @@
           <a class="btn btn-ghost" href="#como-funciona" data-i18n="cta.how">Ver como funciona</a>
         </div>
       </div>
-      <div class="hero-stage" data-load="stage" style="--d:450ms">
+      <div class="hero-stage" data-load="stage" style="--d:1050ms">
         <div class="stage-glow" aria-hidden="true"></div>
-        <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg" aria-hidden="true">
-          <source src="assets/video/hero.webm" type="video/webm">
-          <source src="assets/video/hero.mp4" type="video/mp4">
-        </video>
-        <p class="stage-meta mono" aria-hidden="true"><span>hero.mp4</span><span>1920×1080</span><span data-i18n="stage.loop">loop de 8 s</span></p>
+        <div class="hero-screen">
+          <div class="screen-bar" aria-hidden="true">
+            <span class="screen-dots"><i></i><i></i><i></i></span>
+            <span class="screen-name mono" data-clip-name>setup-01.mp4</span>
+            <span class="screen-live mono">LIVE</span>
+          </div>
+          <div class="screen-view">
+            <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/setup-01-poster.jpg" aria-hidden="true">
+              <source src="assets/video/setup-01.webm" type="video/webm">
+              <source src="assets/video/setup-01.mp4" type="video/mp4">
+            </video>
+            <p class="screen-caption mono" data-i18n="stage.label"></p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -347,7 +356,7 @@
     </div>
   </template>
 
-  <script src="js/i18n.js?v=8"></script>
-  <script src="js/main.js?v=8"></script>
+  <script src="js/i18n.js?v=9"></script>
+  <script src="js/main.js?v=9"></script>
 </body>
 </html>

@@ -34,6 +34,11 @@ Pessoas que se importam com a estética do próprio setup:
 
 ## Modelo de negócio
 
+> **Mudou em 2026-09-15:** o produto não é mais um micro-SaaS por assinatura. Agora é um **pack de wallpapers** com **mais de 500 wallpapers premium exclusivos**, vendido como produto.
+> Ainda falta definir: preço, formato de entrega e o que acontece com os recursos (paletas, multi-monitor).
+
+Modelo anterior, descartado:
+
 **Freemium**
 - **Grátis:** biblioteca básica, com marca d'água ou resolução limitada.
 - **Assinatura mensal:** acesso ilimitado, vídeos, geração por IA e recursos dinâmicos. São os recursos exclusivos, e por isso o gancho para converter assinantes.

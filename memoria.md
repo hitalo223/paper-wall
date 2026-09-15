@@ -32,6 +32,8 @@ Log de decisões e aprendizados.
 - **Supabase:** projeto novo `paper-wall` (ref `mwculaoyknpyqnevvlvq`, região São Paulo, plano grátis, custo 0). Banco ainda vazio.
 - O projeto antigo `wallpaper-gallery-app` do Supabase foi **pausado** (não excluído) para liberar a vaga do plano grátis. Pode ser restaurado no painel. O app antigo na Vercel (`wallpaper-gallery-app`) usava esse banco e deixa de funcionar.
 - Decisão: começar o app do zero; o app antigo fica só como referência.
+- **Mudança de modelo:** não é mais micro-SaaS. O produto é um **pack com mais de 500 wallpapers premium exclusivos**. A sub-headline já diz isso; o resto do site (preços por assinatura, "Começar grátis", "aplicativo web", FAQ de cancelamento) ainda precisa ser ajustado.
+- Topo do site: o vídeo da mão saiu do fundo. No lugar entrou uma **mini tela** abaixo dos botões (referência: template Aurix) que mostra vídeos de wallpapers em setups (`assets/video/setup-01.*`, vídeo vertical recortado na tela). Para mais vídeos, adicionar o nome em `HERO_CLIPS` no `main.js`.
 - **Pendências do app:** o site promete "tirar as cores de uma foto", "porcentagem de combinação", "download na resolução da tela" e "novos wallpapers toda semana" — o app precisa entregar isso (ou ajustar o texto).
 - Corrigido nos testes: palavras do título grudadas, vídeo alargando a página no celular, palavra "Preços" atrás do título, título em EN com palavra sozinha na última linha.
 - Referências salvas em `referencia-site/`: link em `referencias de site em links/` e colagem em `referencia de fontes em imagens/`.
