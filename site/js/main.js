@@ -521,40 +521,109 @@
     });
   }, { threshold: .15, rootMargin: '0px 0px -8% 0px' });
 
-  /* ---------- Vídeo ---------- */
-  // Roda sempre ao entrar no site (mudo, para o navegador permitir autoplay).
-  const video = $('.hero-video');
-  video.muted = true;
-  const playVideo = () => video.play().catch(() => {});
-  playVideo();
-  video.addEventListener('loadeddata', playVideo, { once: true });
-
-  // Vídeos da mini tela do topo. Para adicionar outro: salve setup-02.mp4, setup-02.webm
-  // e setup-02-poster.jpg em assets/video e coloque 'setup-02' nesta lista.
+  /* ---------- Carrossel de vídeos do topo ---------- */
+  // Vídeos dos wallpapers em setups, na ordem em que aparecem. Para adicionar um vídeo:
+  // salve NOME.mp4, NOME.webm e NOME-poster.jpg em assets/video e coloque 'NOME' na lista.
   const HERO_CLIPS = ['setup-01'];
-  if (HERO_CLIPS.length > 1) {
-    let clip = 0;
-    video.loop = false;
-    video.addEventListener('ended', () => {
-      clip = (clip + 1) % HERO_CLIPS.length;
-      const name = HERO_CLIPS[clip];
-      const [webm, mp4] = video.querySelectorAll('source');
-      video.poster = `assets/video/${name}-poster.jpg`;
-      webm.src = `assets/video/${name}.webm`;
-      mp4.src = `assets/video/${name}.mp4`;
-      $('[data-clip-name]').textContent = `${name}.mp4`;
-      video.load();
-      playVideo();
+  const MIN_CARDS = 9;         // com poucos vídeos, a lista se repete até encher a curva
+  const REEL_SPEED = 38;       // px por segundo
+  const reel = $('.reel');
+  const reelTrack = $('.reel-track', reel);
+  const cards = [];
+  const playV = v => v.play().catch(() => {});
+
+  for (let i = 0; cards.length < Math.max(MIN_CARDS, HERO_CLIPS.length); i++) {
+    const name = HERO_CLIPS[i % HERO_CLIPS.length];
+    const el = document.createElement('button');
+    el.type = 'button';
+    el.className = 'reel-card';
+    el.setAttribute('data-i18n-attr', 'aria-label:reel.play');
+    el.innerHTML = `<video muted loop playsinline preload="auto" poster="assets/video/${name}-poster.jpg" aria-hidden="true">
+        <source src="assets/video/${name}.webm" type="video/webm">
+        <source src="assets/video/${name}.mp4" type="video/mp4">
+      </video><span class="reel-name mono">${name}</span>`;
+    const v = $('video', el);
+    v.muted = true;
+    // Quadros repetidos começam em pontos diferentes do vídeo para não ficarem iguais.
+    const start = cards.length * 1.3;
+    v.addEventListener('loadedmetadata', () => { if (v.duration) v.currentTime = start % v.duration; }, { once: true });
+    reelTrack.appendChild(el);
+    cards.push({ el, v, lift: 0 });
+  }
+
+  let reelOffset = 0;
+  let reelLast = 0;
+  let reelVisible = false;
+  let focusCard = null;        // quadro tocando o vídeo inteiro (mouse, toque ou teclado)
+
+  function layoutReel(dt) {
+    const half = reel.clientWidth / 2;
+    const cw = cards[0].el.offsetWidth;
+    const gap = cw * 1.08;
+    const total = gap * cards.length;
+    if (!focusCard) reelOffset = (reelOffset + REEL_SPEED * dt) % total;
+    cards.forEach((c, i) => {
+      let x = (((i * gap - reelOffset) % total) + total) % total;
+      if (x > total / 2) x -= total;
+      const t = clamp(x / (half + cw / 2), -1.2, 1.2);
+      const a = Math.abs(t);
+      const on = c.el === focusCard;
+      c.lift += ((on ? 1 : 0) - c.lift) * Math.min(1, dt * 10);
+      c.el.style.transform = `translateX(${x.toFixed(1)}px) translateZ(${(-a * a * 260 + c.lift * 70).toFixed(1)}px) rotateY(${(-t * 38 * (1 - c.lift)).toFixed(2)}deg) scale(${(1 + c.lift * .08).toFixed(3)})`;
+      c.el.style.opacity = on ? 1 : clamp(1.25 - a);
+      c.el.style.zIndex = on ? 50 : Math.round(20 - a * 10);
+      c.el.classList.toggle('is-center', !focusCard && a < .2);
+      // Só rodam os quadros perto do centro (ou o escolhido); o resto fica parado.
+      const shouldPlay = reelVisible && (on || (!focusCard && a < .45));
+      if (shouldPlay && c.v.paused) playV(c.v);
+      else if (!shouldPlay && !c.v.paused) c.v.pause();
     });
   }
-  // Se o navegador bloquear, começa no primeiro toque/rolagem.
-  ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(ev =>
-    addEventListener(ev, () => { if (video.paused) playVideo(); }, { once: true, passive: true }));
-  // Pausa fora da tela para não gastar processamento.
+
+  function setFocus(el) {
+    if (focusCard === el) return;
+    focusCard = el;
+    reel.classList.toggle('is-paused', !!el);
+    cards.forEach(c => c.el.classList.toggle('is-focus', c.el === el));
+    if (el) {
+      const v = $('video', el);
+      v.currentTime = 0;       // vídeo inteiro, do começo
+      playV(v);
+    }
+    layoutReel(0);
+  }
+
+  cards.forEach(({ el }) => {
+    el.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') setFocus(el); });
+    el.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse' && focusCard === el) setFocus(null); });
+    el.addEventListener('click', e => {
+      if (e.pointerType === 'mouse') return;
+      setFocus(focusCard === el ? null : el);   // toque (ou Enter) liga e desliga
+    });
+    el.addEventListener('focus', () => { if (el.matches(':focus-visible')) setFocus(el); });
+    el.addEventListener('blur', () => { if (focusCard === el) setFocus(null); });
+  });
+  // Tocar fora do carrossel volta a girar.
+  addEventListener('pointerdown', e => { if (focusCard && !reel.contains(e.target)) setFocus(null); }, { passive: true });
+
+  function reelTick(now) {
+    const dt = reelLast ? Math.min((now - reelLast) / 1000, .05) : 0;
+    reelLast = now;
+    layoutReel(dt);
+    if (reelVisible) requestAnimationFrame(reelTick);
+    else reelLast = 0;
+  }
+  // Gira só enquanto está na tela, para não gastar processamento.
   new IntersectionObserver(([en]) => {
-    if (en.isIntersecting) playVideo();
-    else video.pause();
-  }).observe(video);
+    const was = reelVisible;
+    reelVisible = en.isIntersecting;
+    if (reelVisible && !was) requestAnimationFrame(reelTick);
+    if (!reelVisible) cards.forEach(c => c.v.pause());
+  }).observe(reel);
+  addEventListener('resize', () => layoutReel(0), { passive: true });
+  // Se o navegador bloquear o autoplay, os vídeos começam no primeiro toque ou rolagem.
+  ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(ev =>
+    addEventListener(ev, () => layoutReel(0), { once: true, passive: true }));
 
   /* ---------- Início ---------- */
   applyLang(lang, false);

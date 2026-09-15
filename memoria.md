@@ -32,8 +32,11 @@ Log de decisões e aprendizados.
 - **Supabase:** projeto novo `paper-wall` (ref `mwculaoyknpyqnevvlvq`, região São Paulo, plano grátis, custo 0). Banco ainda vazio.
 - O projeto antigo `wallpaper-gallery-app` do Supabase foi **pausado** (não excluído) para liberar a vaga do plano grátis. Pode ser restaurado no painel. O app antigo na Vercel (`wallpaper-gallery-app`) usava esse banco e deixa de funcionar.
 - Decisão: começar o app do zero; o app antigo fica só como referência.
+- Supabase `paper-wall` **pausado** a pedido, enquanto o site não precisa de banco. Para voltar a usar: painel do Supabase → projeto → Restore (ou pedir ao Claude).
 - **Mudança de modelo:** não é mais micro-SaaS. O produto é um **pack com mais de 500 wallpapers premium exclusivos**. A sub-headline já diz isso; o resto do site (preços por assinatura, "Começar grátis", "aplicativo web", FAQ de cancelamento) ainda precisa ser ajustado.
-- Topo do site: o vídeo da mão saiu do fundo. No lugar entrou uma **mini tela** abaixo dos botões (referência: template Aurix) que mostra vídeos de wallpapers em setups (`assets/video/setup-01.*`, vídeo vertical recortado na tela). Para mais vídeos, adicionar o nome em `HERO_CLIPS` no `main.js`.
+- Topo do site: o vídeo da mão saiu do fundo. Abaixo dos botões fica um **carrossel curvo de vídeos verticais** de wallpapers em setups, girando em loop. Passar o mouse (ou tocar) num quadro pausa o carrossel e toca aquele vídeo inteiro, do começo. Só os quadros perto do centro rodam, para não pesar.
+- Vídeos do carrossel: `assets/video/NOME.mp4`, `.webm` e `-poster.jpg` (720px de largura, sem áudio). Para adicionar, colocar o nome em `HERO_CLIPS` no `main.js`, na ordem desejada. Com menos de 9 vídeos a lista se repete.
+- Ideia alternativa (quadros parados embaralhados) ficou de lado.
 - **Pendências do app:** o site promete "tirar as cores de uma foto", "porcentagem de combinação", "download na resolução da tela" e "novos wallpapers toda semana" — o app precisa entregar isso (ou ajustar o texto).
 - Corrigido nos testes: palavras do título grudadas, vídeo alargando a página no celular, palavra "Preços" atrás do título, título em EN com palavra sozinha na última linha.
 - Referências salvas em `referencia-site/`: link em `referencias de site em links/` e colagem em `referencia de fontes em imagens/`.

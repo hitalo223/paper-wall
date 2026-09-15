@@ -39,7 +39,7 @@ Escala: H1 `clamp(2.8rem, 7.4vw, 6.75rem)` · H2 `clamp(2.25rem, 5vw, 4.25rem)` 
 ```
 [nav em pílula: marca · links · PT/EN · Começar grátis]
 [HERO: etiqueta · título grande · texto · Começar grátis | Ver como funciona]
-[      mini tela com borda de brilho (laranja → azul) mostrando vídeos de wallpapers em setups]
+[      carrossel curvo de vídeos verticais (setups) girando em loop; mouse/toque pausa e toca o vídeo inteiro]
 [faixa de estéticas rolando (sans / serif itálico)]
 [O QUE É: título | descrição + "para quem é" · 3 destaques em linha]
 [A PAREDE: tiles voam do centro e formam a parede]  ← assinatura (rolagem fixa)
