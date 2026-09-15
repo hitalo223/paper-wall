@@ -524,7 +524,7 @@
   /* ---------- Carrossel de vídeos do topo ---------- */
   // Vídeos dos wallpapers em setups, na ordem em que aparecem. Para adicionar um vídeo:
   // salve NOME.mp4, NOME.webm e NOME-poster.jpg em assets/video e coloque 'NOME' na lista.
-  const HERO_CLIPS = ['setup-01', 'setup-02', 'setup-03', 'setup-04', 'setup-05'];
+  const HERO_CLIPS = ['setup-01', 'setup-02', 'setup-03', 'setup-04', 'setup-05', 'setup-06', 'setup-07'];
   const MIN_CARDS = 9;         // com poucos vídeos, a lista se repete até encher a curva
   const REEL_SPEED = 38;       // px por segundo
   const reel = $('.reel');
