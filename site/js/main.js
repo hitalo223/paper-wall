@@ -409,7 +409,7 @@
     el.hidden = false;
     el.innerHTML = `<span class="proof-avatars" aria-hidden="true">${AVATAR_COLORS.map(c => `<i style="--c:${c}">${ICON.person}</i>`).join('')}</span>
       <span><span class="proof-stars" aria-hidden="true">${[1, 2, 3, 4, 5].map(n => `<span class="${n <= 4 ? 'on' : 'off'}">${ICON.star}</span>`).join('')}</span>
-      <span class="proof-text"><b data-i18n="proof.rating"></b> <span data-i18n="proof.label"></span> · <span class="proof-demo" data-i18n="proof.demo"></span></span></span>`;
+      <span class="proof-text"><b data-i18n="proof.rating"></b> <span data-i18n="proof.label"></span></span></span>`;
   });
 
   const DEMO = new URLSearchParams(location.search).get('demo') === '1';
