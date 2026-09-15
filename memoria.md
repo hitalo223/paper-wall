@@ -38,6 +38,9 @@ Log de decisões e aprendizados.
 - Vídeos do carrossel: `assets/video/NOME.mp4`, `.webm` e `-poster.jpg` (720px de largura, sem áudio). Para adicionar, colocar o nome em `HERO_CLIPS` no `main.js`, na ordem desejada. Com menos de 9 vídeos a lista se repete.
 - Curva **côncava** como na referência: quadros por dentro de um cilindro, centro mais longe e bordas maiores viradas para o meio. Ajustes em `layoutReel` no `main.js`: `R` (raio, menor = mais curvo) e `gap` (espaço entre quadros); no CSS, `perspective` do `.reel` (menor = bordas maiores) e `--cw` (largura do quadro).
 - Ideia alternativa (quadros parados embaralhados) ficou de lado.
+- Carrossel com 5 vídeos (`setup-01` a `setup-05`), todos gerados na mesma mesa com wallpapers diferentes. Os vídeos têm 10 s, 720px e 30 fps.
+- **Aguardando confirmação:** 2 vídeos baixados do TikTok (`ssstik.io`, um do @exo..tech) mostram setups e wallpapers de outros criadores. Ficaram fora do site por risco de direitos autorais e por darem a entender que aqueles wallpapers são do pack. Já estão convertidos (`setup-06`, `setup-07`) e só entram se houver autorização.
+- **Atenção a marcas nos wallpapers dos vídeos:** logo da Ralph Lauren (`setup-01`) e relógio de luxo (`setup-02`). Evitar marcas registradas num pack vendido como exclusivo.
 - **Pendências do app:** o site promete "tirar as cores de uma foto", "porcentagem de combinação", "download na resolução da tela" e "novos wallpapers toda semana" — o app precisa entregar isso (ou ajustar o texto).
 - Corrigido nos testes: palavras do título grudadas, vídeo alargando a página no celular, palavra "Preços" atrás do título, título em EN com palavra sozinha na última linha.
 - Referências salvas em `referencia-site/`: link em `referencias de site em links/` e colagem em `referencia de fontes em imagens/`.
