@@ -17,7 +17,10 @@ window.PW_I18N = {
     'cta.start': 'Começar grátis',
     'cta.how': 'Ver como funciona',
     'cta.pricing': 'Ver preços',
-    'cta.buy': 'Adquirir agora',
+    'cta.buy': 'Liberar 500+',
+    'buy.price': 'Acesso completo por',
+    'buy.once': 'pagamento único',
+    'proof.demo': 'Avaliações ilustrativas',
 
     'trust.1': 'Garantia de 7 dias',
     'trust.2': 'Pagamento seguro',
@@ -201,7 +204,10 @@ window.PW_I18N = {
     'cta.start': 'Start free',
     'cta.how': 'See how it works',
     'cta.pricing': 'See pricing',
-    'cta.buy': 'Get it now',
+    'cta.buy': 'Unlock 500+',
+    'buy.price': 'Full access for',
+    'buy.once': 'one-time payment',
+    'proof.demo': 'Illustrative reviews',
 
     'trust.1': '7-day guarantee',
     'trust.2': 'Secure checkout',

@@ -6,8 +6,10 @@
   const dict = window.PW_I18N;
   // Endereço do site funcional (o app). Trocar quando ele existir.
   const APP_URL = '#';
-  // Link do checkout da Kiwify para os botões "Adquirir agora".
+  // Link do checkout da Kiwify para os botões "Liberar 500+".
   const CHECKOUT_URL = 'https://pay.kiwify.com.br/qXfGB93';
+  // Preço mostrado embaixo dos botões. Precisa bater com o valor cobrado na Kiwify.
+  const PRICE = 'R$ 5,00';
 
   // Gerador pseudoaleatório com semente: a arte dos tiles é sempre igual.
   const seeded = seed => () => {
@@ -392,19 +394,28 @@
   /* ---------- Modo demonstração (?demo=1) ---------- */
   // Prova social ilustrativa, só para visualizar o design. NÃO aparece para visitantes comuns.
   // Quando houver dados reais (visitantes pelo Supabase, vendas pela Kiwify), trocar os números de exemplo por eles.
+  // Preço embaixo dos botões de compra: quem clica em "Liberar 500+" já sabe que é pago e quanto custa.
+  if (PRICE) {
+    $$('[data-buy-price]').forEach(el => {
+      el.hidden = false;
+      el.innerHTML = `<span data-i18n="buy.price"></span> <b>${PRICE}</b> · <span data-i18n="buy.once"></span>`;
+    });
+  }
+
+  // Avatares + 4 de 5 estrelas embaixo dos botões. O site é uma amostra, então as avaliações
+  // aparecem para todos com a etiqueta "Avaliações ilustrativas". Com avaliações reais, remover a etiqueta.
+  const AVATAR_COLORS = ['#2DD46F', '#7CF0A6', '#15803D', '#A7B0AA'];
+  $$('[data-proof]').forEach(el => {
+    el.hidden = false;
+    el.innerHTML = `<span class="proof-avatars" aria-hidden="true">${AVATAR_COLORS.map(c => `<i style="--c:${c}">${ICON.person}</i>`).join('')}</span>
+      <span><span class="proof-stars" aria-hidden="true">${[1, 2, 3, 4, 5].map(n => `<span class="${n <= 4 ? 'on' : 'off'}">${ICON.star}</span>`).join('')}</span>
+      <span class="proof-text"><b data-i18n="proof.rating"></b> <span data-i18n="proof.label"></span> · <span class="proof-demo" data-i18n="proof.demo"></span></span></span>`;
+  });
+
   const DEMO = new URLSearchParams(location.search).get('demo') === '1';
   if (DEMO) {
     document.body.classList.add('is-demo');
     $('.demo-badge').hidden = false;
-
-    // Avatares + 4 de 5 estrelas embaixo dos botões de compra.
-    const AVATAR_COLORS = ['#2DD46F', '#7CF0A6', '#15803D', '#A7B0AA'];
-    $$('[data-proof]').forEach(el => {
-      el.hidden = false;
-      el.innerHTML = `<span class="proof-avatars">${AVATAR_COLORS.map(c => `<i style="--c:${c}">${ICON.person}</i>`).join('')}</span>
-        <span><span class="proof-stars">${[1, 2, 3, 4, 5].map(n => `<span class="${n <= 4 ? 'on' : 'off'}">${ICON.star}</span>`).join('')}</span>
-        <span class="proof-text"><b data-i18n="proof.rating"></b> <span data-i18n="proof.label"></span></span></span>`;
-    });
 
     // "X pessoas estão no site": oscila de 0 a 8, um passo por vez.
     const now = $('[data-now]');

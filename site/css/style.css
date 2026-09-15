@@ -475,6 +475,10 @@ h1 em, h2 em {
 .proof-stars .off { color: #333A35; }
 .proof-text { display: block; margin-top: .15rem; font-size: .78rem; line-height: 1.25; text-align: left; color: var(--nevoa); }
 .proof-text b { color: var(--papel); }
+.proof-demo { color: var(--apagado); font-style: italic; }
+.buy-price { margin: .8rem 0 0; font-size: .92rem; color: var(--nevoa); }
+.buy-price b { color: var(--verde-claro); font-size: 1.05rem; }
+.hero-copy .buy-price, .cta .buy-price { text-align: center; }
 .now {
   display: inline-flex; align-items: center; gap: .45rem; margin: 0 0 .8rem;
   padding: .3rem .8rem; border-radius: 999px;

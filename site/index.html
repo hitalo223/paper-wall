@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=23">
+  <link rel="stylesheet" href="css/style.css?v=24">
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -34,7 +34,7 @@
         <button type="button" data-lang="pt" aria-pressed="true">PT</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
-      <a class="btn btn-primary btn-sm" href="#" data-buy data-i18n="cta.buy">Adquirir agora</a>
+      <a class="btn btn-primary btn-sm" href="#" data-buy data-i18n="cta.buy">Liberar 500+</a>
     </div>
   </header>
 
@@ -54,10 +54,10 @@
           </div>
         </div>
         <div class="hero-actions" data-load style="--d:900ms">
-          <a class="btn btn-primary" href="#" data-buy data-i18n="cta.buy">Adquirir agora</a>
+          <a class="btn btn-primary" href="#" data-buy data-i18n="cta.buy">Liberar 500+</a>
           <a class="btn btn-ghost" href="#como-funciona" data-i18n="cta.how">Ver como funciona</a>
         </div>
-        <div class="proof" data-proof hidden aria-hidden="true"></div>
+        <p class="buy-price" data-buy-price hidden></p><div class="proof" data-proof hidden></div>
         <ul class="trust" data-trust data-load style="--d:1000ms"></ul>
       </div>
       <div class="hero-stage" data-load="stage" style="--d:1050ms">
@@ -108,8 +108,8 @@
             <li data-i18n="aest.lofi"></li>
           </ul>
           <div data-reveal style="--d:200ms">
-            <a class="btn btn-primary" href="#" data-buy data-i18n="cta.buy">Adquirir agora</a>
-            <div class="proof" data-proof hidden aria-hidden="true"></div>
+            <a class="btn btn-primary" href="#" data-buy data-i18n="cta.buy">Liberar 500+</a>
+            <p class="buy-price" data-buy-price hidden></p><div class="proof" data-proof hidden></div>
             <ul class="trust" data-trust></ul>
           </div>
         </div>
@@ -371,11 +371,11 @@
         <h2 class="h2" data-split data-i18n-html="end.title"></h2>
         <p data-reveal data-i18n="end.text"></p>
         <div class="hero-actions" data-reveal style="--d:120ms">
-          <a class="btn btn-primary" href="#" data-buy data-i18n="cta.buy">Adquirir agora</a>
+          <a class="btn btn-primary" href="#" data-buy data-i18n="cta.buy">Liberar 500+</a>
           <a class="btn btn-ghost" href="#precos" data-i18n="cta.pricing">Ver preços</a>
         </div>
         <div data-reveal style="--d:200ms">
-          <div class="proof" data-proof hidden aria-hidden="true"></div>
+          <p class="buy-price" data-buy-price hidden></p><div class="proof" data-proof hidden></div>
           <ul class="trust" data-trust></ul>
         </div>
       </div>
@@ -410,7 +410,7 @@
     </div>
   </template>
 
-  <script src="js/i18n.js?v=23"></script>
-  <script src="js/main.js?v=23"></script>
+  <script src="js/i18n.js?v=24"></script>
+  <script src="js/main.js?v=24"></script>
 </body>
 </html>
