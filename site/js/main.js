@@ -6,8 +6,8 @@
   const dict = window.PW_I18N;
   // Endereço do site funcional (o app). Trocar quando ele existir.
   const APP_URL = '#';
-  // Link do checkout da Kiwify para os botões "Adquirir agora". Trocar quando existir.
-  const CHECKOUT_URL = '#';
+  // Link do checkout da Kiwify para os botões "Adquirir agora".
+  const CHECKOUT_URL = 'https://pay.kiwify.com.br/qXfGB93';
 
   // Gerador pseudoaleatório com semente: a arte dos tiles é sempre igual.
   const seeded = seed => () => {

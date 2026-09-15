@@ -42,7 +42,7 @@ Log de decisões e aprendizados.
 - `setup-06` e `setup-07` são 2 vídeos baixados do TikTok (`ssstik.io`, um do @exo..tech), com setups e wallpapers de outros criadores. **Adicionados a pedido**, depois do alerta sobre direitos autorais e sobre dar a entender que aqueles wallpapers são do pack. Se houver reclamação, remover da lista `HERO_CLIPS` e apagar os arquivos.
 - **Atenção a marcas nos wallpapers dos vídeos:** logo da Ralph Lauren (`setup-01`) e relógio de luxo (`setup-02`). Evitar marcas registradas num pack vendido como exclusivo.
 - Paleta trocada para **preto + verde** (referência: template "Index", AI SaaS). Detalhes em `specs/design.md`.
-- Botão **"Adquirir agora"** no menu, no topo, na seção do pack e no final. Aponta para `CHECKOUT_URL` em `main.js` (hoje `#`, trocar pelo link da Kiwify).
+- Botão **"Adquirir agora"** no menu, no topo, na seção do pack e no final. Aponta para `CHECKOUT_URL` em `main.js`: checkout da Kiwify https://pay.kiwify.com.br/qXfGB93 (desde 2026-09-15).
 - Nova seção **"O que você recebe"** (`#pack`): imagem ilustrativa com pastas por categoria e, ao lado, benefícios e categorias (Anime, Old Money, Cyberpunk, Minimalista, Dark Academia, Lo-fi). A imagem é provisória: trocar por prints reais do pack.
 - Entrega: recomendado usar a **área de membros da Kiwify** (acesso por e-mail, corta sozinho no reembolso) em vez de Drive. Área própria fica para depois.
 - Ainda com cara de assinatura: cards Grátis/Pro e FAQ de cancelamento. Ajustar quando houver preço e dados do pack.
